@@ -1,8 +1,10 @@
-# == Variables ==
-# 
-# You can define here your project Variables.
-# If you want to define/override a Variable for a specific Environment, 
-# please add a 'variables.yaml' in the sub directory '_<environment>'.
-#
 Variables:
-  #myVariable: value
+  Hubspot:
+    # Either use an api Key for direct backend login (End user must not login)
+    # Or clientId and clientSecret for OAuth2 (End user must login in the browser)
+    Auth:
+      #[password]
+      apikey:
+      clientId:
+      #[password]
+      clientSecret:
