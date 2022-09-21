@@ -1,0 +1,10 @@
+RestClients:
+  hubspot-contacts:
+    UUID: eed55212-87d9-4d61-ad77-4c11f66adadb
+    Url: https://api.hubapi.com/
+    Icon: res:/webContent/icons/hubspot.png
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - ch.ivyteam.connecort.hubspot.auth.auth.HubspotApiKeyOrOAuth2Feature
+    Properties:
+      Auth.scope: contacts

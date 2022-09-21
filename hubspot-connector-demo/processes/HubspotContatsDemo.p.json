@@ -1,0 +1,50 @@
+{
+  "format" : "9.4.20",
+  "id" : "1787D3F58FD61134",
+  "data" : "ch.ivyteam.connector.hubspot.demo.Data",
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start.ivp",
+      "config" : {
+        "callSignature" : "start",
+        "outLink" : "start.ivp"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 11, "y" : 37 }
+      },
+      "connect" : { "id" : "f5", "to" : "f6" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "RestClientCall",
+      "config" : {
+        "path" : "/crm/v3/objects/contacts/search",
+        "bodyObjectMapping" : {
+          "param.after" : "0",
+          "param.filterGroups" : "[]",
+          "param.limit" : "10",
+          "param.properties" : "[]",
+          "param.sorts" : "[\"name\"]"
+        },
+        "clientId" : "eed55212-87d9-4d61-ad77-4c11f66adadb",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.hubapi.api.client.PublicObjectSearchRequest",
+        "resultType" : "com.hubapi.api.client.CollectionResponseWithTotalSimplePublicObjectForwardPaging",
+        "bodyInputType" : "ENTITY",
+        "responseCode" : "ivy.log.info(result.results);"
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}
